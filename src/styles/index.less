@@ -1,13 +1,330 @@
 @import 'font';
 @import 'variables';
 @import 'global';
-@import 'components';
 
-header,
+header {
+  width: 100%;
+  padding: 1em 0;
+  background-color: var(--dark-bg);
+  color: var(--bright);
+}
+
+.header--fixed {
+  position: fixed;
+  top: 0;
+  background-color: #fff;
+  color: var(--dark);
+  box-shadow: 0 4px 2px -2px var(--dark);
+  .menu {
+    &__icon {
+      background-color: var(--dark);
+      opacity: .8;
+      &.active {
+        height: .65em;
+        background-color: transparent;
+        background-image: url(../images/assets/menu-arrow--mobile.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        &::before,
+        &::after {
+          display: none;
+        }
+      }
+      &::after,
+      &::before {
+        background-color: var(--dark);
+      }
+    }
+  }
+}
+
 .hero {
   color: var(--bright);
   background-color: var(--dark-bg);
   &__nav-assist {
     display: none;
+  }
+}
+
+.logo {
+  font-family: 'Raleway ExtraBold';
+  font-size: clamp(1.2rem, 6vw, 1.875rem);
+}
+
+.menu {
+  position: relative;
+  width: 30%;
+  &__title {
+    font-size: clamp(1rem, 5.5vw, 1.5rem);
+  }
+  &__icon {
+    width: 1.2em;
+    height: .25em;
+    background-color: var(--bright);
+    &.active {
+      height: .65em;
+      background-color: transparent;
+      background-image: url(../images/assets/menu-arrow.svg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+      width: 1.2em;
+      height: .25em;
+      background-color: var(--bright);
+    }
+    &::after {
+      top: 0;
+    }
+    &::before {
+      bottom: .0625em;
+    }
+  }
+}
+
+.hero {
+  min-height: 100vh;
+  h1 {
+    font-family: 'Raleway ExtraBold';
+    font-size: clamp(2.5rem, 13vw, 3rem);
+  }
+  &__cite {
+    margin-top: 1.875em;
+    text-transform: initial;
+    p {
+      font-family: 'Raleway Regular';
+      line-height: 1.5;
+    }
+    figcaption {
+      margin-top: 1em;
+      text-align: right;
+      font-family: 'Raleway Light Italic';
+      font-size: clamp(.75rem, 4vw, 1.125rem);
+    }
+  }
+}
+
+#menu {
+  position: fixed;
+  top: 9%;
+  right: 2%;
+  width: 40%;
+  background-color: #fff;
+  box-shadow: 1px 1px 2px 2px var(--dark);
+  transition: opacity var(--fadeOut);
+  opacity: 0;
+  .logo {
+    display: none;
+  }
+  .flex-container {
+    flex-direction: column;
+    padding: .25em 0;
+    li {
+      padding: .5em 0;
+    }
+  }
+  &.active {
+    opacity: 1;
+  }
+}
+
+.wrapper--inner {
+  .wrapper();
+  text-align: center;
+}
+
+h2 {
+  margin: 1.5em 0 .5em 0;
+  font-family: 'Raleway ExtraBold';
+  font-size: clamp(1.2rem, 6vw, 1.875rem);
+}
+
+.subheading {
+  font-size: clamp(1rem, 5vw, 1.125rem);
+  text-transform: initial;
+}
+
+.about {
+  img {
+    margin-top: .75em;
+    margin-bottom: .75em;
+  }
+  &__desc {
+    font-size: clamp(.75rem, 3vw, .875rem);
+    text-transform: initial;
+  }
+}
+
+.stats {
+  margin-top: 1.5em;
+  padding: 2em 0;
+  background-image: url(../images/assets/stats-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: 35% 40%;
+  background-attachment: fixed;
+  color: var(--bright);
+  .flex-container {
+    flex-direction: column;
+    .flex-item {
+      width: 65%;
+    }
+  }
+  &__desc {
+    margin: 0;
+    font-size: clamp(1rem, 4vw, 2rem);
+  }
+  &__point {
+    font-size: clamp(3rem, 16vw, 4rem);
+    margin-bottom: .25em;
+  }
+}
+
+.products {
+  margin: 1.75em 0;
+  article + article {
+    margin-top: 3em;
+  }
+  h3 {
+    font-family: 'Raleway Bold';
+    letter-spacing: 3px;
+  }
+  &__price {
+    display: block;
+    margin: .25em 0 .5em 0;
+    font-size: clamp(1.5rem, 8vw, 1.875rem);
+    letter-spacing: 3.75px;
+  }
+  &__link {
+    font-size: clamp(1rem, 5vw, 1.125rem);
+    text-transform: initial;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    line-height: normal;
+    letter-spacing: 2.25px;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.staff {
+  padding: .01em 0;
+  background-color: var(--bright);
+  .flex-container {
+    display: block;
+    margin: 1.75em 0;
+  }
+  figure + figure {
+    margin-top: 3em;
+  }
+  .member__name {
+    margin-top: .5em;
+    font-family: 'Raleway Black';
+    font-size: clamp(1.2rem, 6vw, 1.875rem);
+  }
+  .member__skill {
+    margin-top: .5em;
+    margin-left: 0;
+  }
+}
+
+.feed {
+  text-align: center;
+  .flex-container {
+    margin: 1.75em 0;
+  }
+  h4 {
+    margin-bottom: 1.75em;
+    font-family: 'Raleway ExtraBold';
+    font-size: clamp(1rem, 5.5vw, 1.5rem);
+    a:hover {
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+  }
+}
+
+footer {
+  padding: 1.75em 0;
+  background-color: var(--dark-bg);
+  color: var(--bright);
+  .wrapper--inner {
+    text-align: left;
+  }
+  .logo {
+    text-align: center;
+    margin-bottom: 3em;
+  }
+  .flex-item {
+    margin-top: 1.5em;
+  }
+  h5 {
+    margin-bottom: .5em;
+    font-family: 'Raleway Black';
+    font-size: clamp(1rem, 5vw, 1.125rem);
+    letter-spacing: 2.25px;
+  }
+  ul > li > a {
+    display: block;
+    padding: .25em 0;
+    font-size: clamp(.9rem, 4.5vw, 1rem);
+  }
+  .social-btn {
+    display: block;
+    width: 30px;
+    height: 30px;
+    font-size: 0;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: var(--fadeOut);
+    &:hover {
+      opacity: .3;
+    }
+    &.fb {
+      background-image: url(../images/assets/facebook.webp);
+    }
+    &.linkn {
+      background-image: url(../images/assets/linked-in.webp);
+    }
+    &.insta {
+      background-image: url(../images/assets/instagram.webp);
+    }
+    &.tw {
+      background-image: url(../images/assets/twitter.webp);
+    }
+  }
+  img {
+    filter: grayscale(1);
+    transition: var(--fadeOut);
+    cursor: pointer;
+    &:hover {
+      filter: none;
+    }
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .menu {
+    &:hover,
+    &:focus {
+      .menu__icon {
+        height: .65em;
+        background-color: transparent;
+        background-image: url(../images/assets/menu-arrow.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        &::before,
+        &::after {
+          display: none;
+        }
+      }
+    }
   }
 }

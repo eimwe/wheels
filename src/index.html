@@ -11,15 +11,13 @@
         <div class="logo">
           <span class="logo--bright">Wheels</span>
         </div>
-        <div class="menu-button" aria-label="menu" tabindex="0">
-          <input type="checkbox" id="menu-toggle">
-          <label for="menu-toggle">
-            <span class="menu-title">Menu</span>
-          </label>
-        </div>
+        <a href="#menu" class="menu flex-container" aria-label="menu" tabindex="0">
+          <span class="menu__title">Menu</span>
+          <span class="menu__icon"></span>
+        </a>
       </div>
     </header>
-    <section class="hero">
+    <section class="hero flex-container">
       <div class="wrapper">
         <h1>Welcome to Wheels</h1>
         <figure class="hero__cite">
@@ -37,7 +35,7 @@
         <img src="./images/assets/mouse-icon.png" alt="mouse icon">
       </div>
     </section>
-    <nav>
+    <nav id="menu">
       <div class="wrapper flex-container">
         <div class="logo">
           <a href="#" title="Browse to the Homepage">Wheels</a>
@@ -69,7 +67,7 @@
         <h2>About us</h2>
         <p class="subheading">Let's talk about what makes your company great.</p>
         <img src="./images/assets/bike-icon.png" alt="bike icon">
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur, dolore ipsa beatae odit ea ducimus ad. Eveniet rerum dolor itaque quasi, magni, deleniti recusandae tempore, voluptatem dolorem maiores illo error?</p>
+        <p class="about__desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur, dolore ipsa beatae odit ea ducimus ad. Eveniet rerum dolor itaque quasi, magni, deleniti recusandae tempore, voluptatem dolorem maiores illo error?</p>
       </div>
     </section>
     <section class="stats">
@@ -77,12 +75,18 @@
         <h2>Some statistics</h2>
         <p class="subheading">Showing what your company already acomplished is always a good selling point.</p>
         <dl class="flex-container">
-          <dt class="stats__point">409</dt>
-          <dd class="stats__desc">Bikes sold</dd>
-          <dt class="stats__point">2012</dt>
-          <dd class="stats__desc">Year the company started</dd>
-          <dt class="stats__point">0</dt>
-          <dd class="stats__desc">Unsatisfied customers</dd>
+          <dl class="flex-item">
+            <dt class="stats__point">409</dt>
+            <dd class="stats__desc">Bikes sold</dd>
+          </dl>
+          <dl class="flex-item">
+            <dt class="stats__point">2012</dt>
+            <dd class="stats__desc">Year the company started</dd>
+          </dl>
+          <dl class="flex-item">
+            <dt class="stats__point">0</dt>
+            <dd class="stats__desc">Unsatisfied customers</dd>
+          </dl>
         </dl>
       </div>
     </section>
