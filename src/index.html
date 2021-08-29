@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <title>Wheels Homepage</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
-  <body lang="en">
+  <body>
     <header>
       <div class="wrapper flex-container">
         <div class="logo">
@@ -42,19 +42,19 @@
         </div>
         <ul class="flex-container">
           <li>
-            <a href="#" title="Find out more about us">About us</a>
+            <a href="#about" title="Find out more about us">About us</a>
           </li>
           <li>
-            <a href="#" title="Take a look at bikes we sell">Products</a>
+            <a href="#prods" title="Take a look at bikes we sell">Products</a>
           </li>
           <li>
             <a href="#" title="Here are other cool things that we do">Services</a>
           </li>
           <li>
-            <a href="#" title="Meet our team and learn who we are">Our team</a>
+            <a href="#team" title="Meet our team and learn who we are">Our team</a>
           </li>
           <li>
-            <a href="#" title="Catch up with the latest things we've done">Blog</a>
+            <a href="#insta" title="Catch up with the latest things we've done">Blog</a>
           </li>
           <li>
             <a href="#" title="Send us feedback or chat">Contact</a>
@@ -62,7 +62,7 @@
         </ul>
       </div>
     </nav>
-    <section class="about">
+    <section id="about" class="about">
       <div class="wrapper--inner">
         <h2>About us</h2>
         <p class="subheading">Let's talk about what makes your company great.</p>
@@ -74,7 +74,7 @@
       <div class="wrapper--inner">
         <h2>Some statistics</h2>
         <p class="subheading">Showing what your company already acomplished is always a good selling point.</p>
-        <dl class="flex-container">
+        <div class="flex-container">
           <dl class="flex-item">
             <dt class="stats__point">409</dt>
             <dd class="stats__desc">Bikes sold</dd>
@@ -87,10 +87,10 @@
             <dt class="stats__point">0</dt>
             <dd class="stats__desc">Unsatisfied customers</dd>
           </dl>
-        </dl>
+        </div>
       </div>
     </section>
-    <main class="wrapper--inner">
+    <main id="prods" class="wrapper--inner">
       <h2>Featured products</h2>
       <p class="subheading">Your chance to shine</p>
       <div class="products flex-container">
@@ -132,7 +132,7 @@
         </article>
       </div>
     </main>
-    <section class="staff">
+    <section id="team" class="staff">
       <div class="wrapper--inner">
         <h2>Meet the team</h2>
         <p class="subheading">People wjo make magic happen</p>
@@ -140,28 +140,28 @@
           <figure class="staff__member">
             <img src="./images/staff/ian.png" alt="Ian">
             <figcaption>
-              <dt class="member__name">Ian</dt>
-              <dd class="member__skill">Founder, CEO</dd>
+              <span class="member__name">Ian</span>
+              <span class="member__skill">Founder, CEO</span>
             </figcaption>
           </figure>
           <figure class="staff__member">
             <img src="./images/staff/sarah.png" alt="Sarah">
             <figcaption>
-              <dt class="member__name">Sarah</dt>
-              <dd class="member__skill">Designer</dd>
+              <span class="member__name">Sarah</span>
+              <span class="member__skill">Designer</span>
             </figcaption>
           </figure>
           <figure class="staff__member">
             <img src="./images/staff/juan.png" alt="Juan">
             <figcaption>
-              <dt class="member__name">Juan</dt>
-              <dd class="member__skill">Office Wizard</dd>
+              <span class="member__name">Juan</span>
+              <span class="member__skill">Office Wizard</span>
             </figcaption>
           </figure>
         </div>
       </div>
     </section>
-    <section class="feed">
+    <section id="insta" class="feed">
       <div class="wrapper">
         <h2>#Social showcase</h2>
         <p class="subheading">Show your customers why your Instagram account is the one they should follow</p>
