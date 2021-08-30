@@ -133,11 +133,6 @@ header {
   }
 }
 
-.wrapper--inner {
-  .wrapper();
-  text-align: center;
-}
-
 h2 {
   margin: 1.5em 0 .5em 0;
   font-family: 'Raleway ExtraBold';
@@ -277,6 +272,10 @@ footer {
     display: block;
     padding: .25em 0;
     font-size: clamp(.9rem, 4.5vw, 1rem);
+    transition: var(--fadeOut);
+    &:hover {
+      opacity: .3;
+    }
   }
   .social-btn {
     display: block;
@@ -427,6 +426,7 @@ footer {
   }
 
   footer {
+    min-height: 452px;
     .wrapper--inner {
       align-items: flex-start;
       justify-content: space-between;
@@ -436,10 +436,14 @@ footer {
 
 @media only screen and (min-width: 1200px) {
   .menu {
+    width: 7.25%;
+    &__icon {
+      transition: all var(--fadeOut);
+    }
     &:hover,
     &:focus {
       .menu__icon {
-        height: .65em;
+        height: 1em;
         background-color: transparent;
         background-image: url(../images/assets/menu-arrow.svg);
         background-repeat: no-repeat;
@@ -450,5 +454,109 @@ footer {
         }
       }
     }
+  }
+
+  #menu {
+    .wrapper.flex-container {
+      flex-direction: row;
+      flex-wrap: nowrap;
+    }
+    .logo {
+      display: block;
+      margin-right: 7em;
+    }
+  }
+
+  .hero {
+    min-height: 100vh;
+    background-size: cover;
+    background-position-y: 45%;
+    &__cite {
+      width: 25%;
+    }
+    .wrapper {
+      position: static;
+      width: 98%;
+      max-width: 1540px;
+      margin: 0 auto;
+      margin-top: 9em;
+      padding: 0;
+      &::before {
+        display: none;
+      }
+    }
+    &__nav-assist {
+      position: fixed;
+      z-index: 1;
+      display: block;
+      bottom: 5%;
+      left: calc(50% - 45px);
+      animation-name: mouseMove;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-timing-function: linear;
+      filter: drop-shadow(2px 2px 1px var(--dark));
+    }
+  }
+
+  @keyframes mouseMove {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(10px);
+    }
+  }
+
+  .about {
+    &__desc {
+      text-align: left;
+    }
+  }
+
+  .stats {
+    .flex-container {
+      .flex-item:nth-child(2) {
+        .stats__desc {
+          width: 75%;
+          margin: 0 auto;
+        }
+      }
+      .flex-item:last-child {
+        .stats__desc {
+          width: 50%;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+
+  .staff {
+    .flex-container {
+      justify-content: space-around;
+    }
+  }
+
+  .feed {
+    img {
+      transition: transform var(--fadeOut);
+      &:hover {
+        transform: scale(.9);
+      }
+    }
+  }
+
+  footer {
+    .wrapper--inner {
+      justify-content: space-around;
+    }
+  }
+}
+
+@media only screen and (min-width: 1900px) {
+  .hero {
+    background-size: unset;
+    background-position: 0 15%;
   }
 }
